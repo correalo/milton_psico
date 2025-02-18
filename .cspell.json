@@ -1,0 +1,22 @@
+{
+    "version": "0.2",
+    "language": "en,pt,pt-BR",
+    "words": [
+        "milton",
+        "psql",
+        "usuario",
+        "servicos",
+        "contato",
+        "consultorio",
+        "appbar",
+        "psicologo",
+        "ribeirão",
+        "preto"
+    ],
+    "ignorePaths": [
+        "node_modules/**",
+        "dist/**",
+        "build/**",
+        "*.lock"
+    ]
+}

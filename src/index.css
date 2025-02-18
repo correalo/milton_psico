@@ -1,0 +1,68 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #3399ff;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Remove todos os fundos azuis */
+.MuiButton-root,
+.MuiButtonBase-root,
+a[class*="sc-"],
+[class*="sc-"] a,
+.MuiLink-root,
+a {
+  background-color: transparent !important;
+}
+
+/* Força links do header a serem brancos */
+header a {
+  color: white !important;
+  background-color: transparent !important;
+}
+
+header a:hover {
+  background-color: rgba(255,255,255,0.1) !important;
+}
+
+.sc-dVupuq:not(.MuiAppBar-root), 
+.slick-slider, 
+.slick-list, 
+.slick-track,
+[class*="sc-"]:not(.MuiAppBar-root):not(a):not(header *) {
+  background-color: #3399ff !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: white !important;
+}
