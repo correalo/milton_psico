@@ -24,7 +24,7 @@ const theme = createTheme({
 
 const AppContainer = styled.div`
   min-height: 100vh;
-  background-color: #66b3ff;
+  background-color: black;
 `;
 
 const App: React.FC = () => {

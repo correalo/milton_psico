@@ -21,7 +21,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #3399ff;
+  background-color: black;
   overflow-x: hidden;
 }
 
@@ -59,10 +59,16 @@ header a:hover {
 .slick-list, 
 .slick-track,
 [class*="sc-"]:not(.MuiAppBar-root):not(a):not(header *) {
-  background-color: #3399ff !important;
+  background-color: #99ccff !important;
 }
 
 .slick-prev:before,
 .slick-next:before {
   color: white !important;
+}
+
+@media (max-width: 768px) {
+  nav, .MuiDrawer-paper {
+    background-color: black !important;
+  }
 }

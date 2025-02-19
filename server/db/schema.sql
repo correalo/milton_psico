@@ -1,4 +1,8 @@
--- Schema para o site do Dr. José Milton Gomes
+/*
+ * ============================================================================
+ * SCHEMA PARA O SITE DO DR. JOSÉ MILTON GOMES
+ * ============================================================================
+ */
 
 -- Tabela de usuários (admin)
 CREATE TABLE IF NOT EXISTS users (

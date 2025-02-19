@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledSection = styled.section`
   padding: 40px 0;
-  background-color: #3399ff;
+  background-color: black;
   width: 100vw;
   position: relative;
   left: 50%;

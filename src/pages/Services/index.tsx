@@ -3,8 +3,9 @@ import { Container, Typography, Box, Card, CardContent, Grid } from '@mui/materi
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
-  padding: 40px 0;
-  background-color: #3399ff;
+  min-height: calc(100vh - 64px);
+  background-color: black;
+  padding: 20px;
   width: 100vw;
   position: relative;
   left: 50%;

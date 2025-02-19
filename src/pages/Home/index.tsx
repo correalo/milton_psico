@@ -1,16 +1,49 @@
-import { Container, Typography, Box } from '@mui/material';
+import { Container, Typography, Box, IconButton } from '@mui/material';
 import Carousel from '../../components/Carousel';
 import styled from 'styled-components';
+import { styled as muiStyled } from '@mui/material/styles';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const StyledSection = styled.section`
-  padding: 40px 0;
-  background-color: #3399ff;  // Azul mais escuro
+  min-height: calc(100vh - 64px);
+  background-color: black;
+  padding: 20px;
   width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+`;
+
+const SocialIconsContainer = muiStyled(Box)`
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+`;
+
+const WhatsAppIconStyled = muiStyled(WhatsAppIcon)`
+  && {
+    color: #25D366;
+    font-size: 32px;
+  }
+`;
+
+const FacebookIconStyled = muiStyled(FacebookIcon)`
+  && {
+    color: #1877F2;
+    font-size: 32px;
+  }
+`;
+
+const InstagramIconStyled = muiStyled(InstagramIcon)`
+  && {
+    color: #E4405F;
+    font-size: 32px;
+  }
 `;
 
 const Home = () => {
@@ -73,6 +106,29 @@ const Home = () => {
             <Typography variant="body1">
               Atendimento em Ribeirão Preto - SP
             </Typography>
+            <SocialIconsContainer>
+              <IconButton 
+                href="https://wa.me/5516991553901" 
+                target="_blank"
+                aria-label="WhatsApp"
+              >
+                <WhatsAppIconStyled />
+              </IconButton>
+              <IconButton 
+                href="https://www.instagram.com/josemiltongomespsi" 
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <InstagramIconStyled />
+              </IconButton>
+              <IconButton 
+                href="https://www.facebook.com/josemiltongomespsi" 
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <FacebookIconStyled />
+              </IconButton>
+            </SocialIconsContainer>
           </Box>
         </Container>
       </StyledSection>

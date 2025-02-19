@@ -50,7 +50,12 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const ContactForm = () => {
+interface ContactFormProps {
+  textFieldStyle?: React.ComponentType<any>;
+  buttonStyle?: React.ComponentType<any>;
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ textFieldStyle: CustomTextField, buttonStyle: CustomButton }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -110,48 +115,113 @@ const ContactForm = () => {
               {status.message}
             </Alert>
           )}
-          <StyledTextField
-            required
-            fullWidth
-            label="Nome"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            variant="outlined"
-          />
-          <StyledTextField
-            required
-            fullWidth
-            label="Email"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            variant="outlined"
-          />
-          <StyledTextField
-            required
-            fullWidth
-            label="Telefone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            variant="outlined"
-          />
-          <StyledTextField
-            required
-            fullWidth
-            label="Mensagem"
-            name="message"
-            multiline
-            rows={4}
-            value={formData.message}
-            onChange={handleChange}
-            variant="outlined"
-          />
-          <StyledButton type="submit" variant="contained">
-            Enviar Mensagem
-          </StyledButton>
+          {CustomTextField ? (
+            <CustomTextField
+              required
+              fullWidth
+              label="Nome"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              variant="outlined"
+            />
+          ) : (
+            <StyledTextField
+              required
+              fullWidth
+              label="Nome"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              variant="outlined"
+            />
+          )}
+          {CustomTextField ? (
+            <CustomTextField
+              required
+              fullWidth
+              label="Email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              variant="outlined"
+            />
+          ) : (
+            <StyledTextField
+              required
+              fullWidth
+              label="Email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              variant="outlined"
+            />
+          )}
+          {CustomTextField ? (
+            <CustomTextField
+              required
+              fullWidth
+              label="Telefone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              variant="outlined"
+            />
+          ) : (
+            <StyledTextField
+              required
+              fullWidth
+              label="Telefone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              variant="outlined"
+            />
+          )}
+          {CustomTextField ? (
+            <CustomTextField
+              required
+              fullWidth
+              label="Mensagem"
+              name="message"
+              multiline
+              rows={4}
+              value={formData.message}
+              onChange={handleChange}
+              variant="outlined"
+            />
+          ) : (
+            <StyledTextField
+              required
+              fullWidth
+              label="Mensagem"
+              name="message"
+              multiline
+              rows={4}
+              value={formData.message}
+              onChange={handleChange}
+              variant="outlined"
+            />
+          )}
+          {CustomButton ? (
+            <CustomButton
+              type="submit"
+              variant="contained"
+              fullWidth
+            >
+              Enviar Mensagem
+            </CustomButton>
+          ) : (
+            <StyledButton
+              type="submit"
+              variant="contained"
+              fullWidth
+            >
+              Enviar Mensagem
+            </StyledButton>
+          )}
         </StyledForm>
       </Box>
     </Container>
