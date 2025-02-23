@@ -1,15 +1,17 @@
-import { Container, Typography, Box, IconButton } from '@mui/material';
+import { Container, Typography, Box } from '@mui/material';
 import Carousel from '../../components/Carousel';
 import styled from 'styled-components';
 import { styled as muiStyled } from '@mui/material/styles';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import SocialIcons from '../../components/SocialIcons';
+import WhatsAppButton from '../../components/WhatsAppButton';
 
-const StyledSection = styled.section`
-  min-height: calc(100vh - 64px);
-  background-color: black;
-  padding: 20px;
+const StyledSection = styled('section')`
+  background-color: #0d1b3e;
+  color: white;
+  padding: 40px 0;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -76,11 +78,14 @@ const Home = () => {
             <Typography variant="h3" component="h1" gutterBottom>
               José Milton Gomes
             </Typography>
-            <Typography variant="h5" color="textSecondary" gutterBottom>
-              Psicólogo Clínico - CRP xx.xxx
+            <Typography variant="subtitle1" gutterBottom>
+              Psicólogo Clínico - CRP 13.060
             </Typography>
             <Typography variant="subtitle1" color="textSecondary">
-              Atendimento em Ribeirão Preto - SP
+              Atendimento presencial em Ribeirão Preto - SP
+            </Typography>
+            <Typography variant="subtitle1" color="textSecondary">
+              Atendimento on-line para todo o Brasil
             </Typography>
           </Box>
 
@@ -96,39 +101,23 @@ const Home = () => {
             </ul>
           </Box>
 
-          <Box my={4} textAlign="center">
+          <Box my={4} textAlign="center" sx={{ 
+            padding: '2rem',
+            borderRadius: '8px',
+            color: 'white'
+          }}>
             <Typography variant="h6" gutterBottom>
               Entre em contato
             </Typography>
-            <Typography variant="body1">
-              Telefone/WhatsApp: (016)99155-3901
-            </Typography>
-            <Typography variant="body1">
-              Atendimento em Ribeirão Preto - SP
-            </Typography>
-            <SocialIconsContainer>
-              <IconButton 
-                href="https://wa.me/5516991553901" 
-                target="_blank"
-                aria-label="WhatsApp"
-              >
-                <WhatsAppIconStyled />
-              </IconButton>
-              <IconButton 
-                href="https://www.instagram.com/josemiltongomespsi" 
-                target="_blank"
-                aria-label="Instagram"
-              >
-                <InstagramIconStyled />
-              </IconButton>
-              <IconButton 
-                href="https://www.facebook.com/josemiltongomespsi" 
-                target="_blank"
-                aria-label="Facebook"
-              >
-                <FacebookIconStyled />
-              </IconButton>
-            </SocialIconsContainer>
+
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 2 }}>
+              <Typography variant="body1">
+                Telefone: (016) 99155-3901
+              </Typography>
+              <WhatsAppButton phoneNumber="16991553901" />
+            </Box>
+
+            <SocialIcons />
           </Box>
         </Container>
       </StyledSection>

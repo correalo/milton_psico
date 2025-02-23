@@ -1,10 +1,13 @@
 import React from 'react';
 import { Container, Typography, Box } from '@mui/material';
 import styled from 'styled-components';
+import SocialIcons from '../../components/SocialIcons';
 
-const StyledSection = styled.section`
+const StyledSection = styled('section')`
   padding: 40px 0;
-  background-color: black;
+  background-color: #0d1b3e;
+  color: white;
+  min-height: calc(100vh - 64px);
   width: 100vw;
   position: relative;
   left: 50%;
@@ -25,7 +28,7 @@ const About = () => {
         
         <Box mb={4}>
           <Typography variant="body1" paragraph>
-            Com mais de X anos de experiência em psicologia clínica, dedico-me a ajudar pessoas
+            Com mais de 45 anos de experiência em psicologia clínica, dedico-me a ajudar pessoas
             a encontrarem equilíbrio emocional e bem-estar mental.
           </Typography>
           
@@ -40,14 +43,14 @@ const About = () => {
             Formação
           </Typography>
           <Typography variant="body1" paragraph>
-            • Graduação em Psicologia - Universidade XXXX
+            • Graduação em Psicologia - Universidade de São Paulo (1980)
           </Typography>
           <Typography variant="body1" paragraph>
-            • Especialização em Terapia Cognitivo-Comportamental
+            • Especialização em Psicanálise
           </Typography>
         </Box>
 
-        <Box>
+        <Box mb={4}>
           <Typography variant="h5" gutterBottom>
             Áreas de Atuação
           </Typography>
@@ -57,6 +60,9 @@ const About = () => {
             <li>Desenvolvimento Pessoal</li>
             <li>Relacionamentos</li>
           </Typography>
+        </Box>
+        <Box my={4} textAlign="center">
+          <SocialIcons />
         </Box>
       </Container>
     </StyledSection>

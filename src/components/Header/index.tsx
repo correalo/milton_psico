@@ -12,6 +12,10 @@ const StyledAppBar = styled(AppBar)`
   }
 `;
 
+const HeaderContainer = styled.div`
+  width: 100%;
+`;
+
 const StyledToolbar = styled(Toolbar)`
   && {
     padding: 0;
@@ -19,6 +23,7 @@ const StyledToolbar = styled(Toolbar)`
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     
     @media (max-width: 820px) {
       min-height: 48px;
@@ -30,8 +35,116 @@ const StyledToolbar = styled(Toolbar)`
   }
 `;
 
-const HeaderContainer = styled.div`
+const HeaderContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  flex-grow: 0;
+  margin: 0 16px;
+  padding: 8px 0;
+  order: 2;
+
+  @media (max-width: 820px) {
+    margin: 0 8px;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  @media (max-width: 480px) {
+    margin: 0 4px;
+  }
+`;
+
+const DoctorNameLink = styled(Link)`
+  text-decoration: none;
+  color: white !important;
+  background-color: transparent !important;
+  text-align: right;
+  margin-bottom: 4px;
+  display: block;
   width: 100%;
+
+  @media (max-width: 820px) {
+    text-align: center;
+  }
+
+  &:hover, &:active, &:visited {
+    color: white !important;
+    text-decoration: none;
+  }
+`;
+
+const DoctorNameText = styled(Typography)`
+  && {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: right;
+    color: white !important;
+    background-color: transparent !important;
+    margin: 0;
+    line-height: 1.2;
+
+    @media (max-width: 820px) {
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+      letter-spacing: 0.2px;
+    }
+  }
+`;
+
+const ContactInfo = styled(Typography)`
+  && {
+    color: white;
+    font-size: 0.8rem;
+    text-align: right;
+    line-height: 1.2;
+    width: 100%;
+    
+    @media (max-width: 820px) {
+      font-size: 0.75rem;
+      text-align: center;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 0.7rem;
+    }
+  }
+`;
+
+const DesktopNav = styled.div`
+  display: flex;
+  align-items: center;
+  order: 1;
+
+  @media (max-width: 820px) {
+    display: none;
+  }
+`;
+
+const MenuButton = styled(IconButton)`
+  && {
+    margin-right: 16px;
+    padding: 8px;
+    color: white;
+    
+    @media (max-width: 820px) {
+      margin-right: 12px;
+      padding: 6px;
+    }
+    
+    @media (max-width: 480px) {
+      margin-right: 8px;
+      padding: 4px;
+    }
+  }
 `;
 
 const MobileMenu = styled.div`
@@ -70,114 +183,6 @@ const NavLink = styled(Link)`
   }
 `;
 
-const HeaderContent = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  margin: 0 16px;
-  padding: 8px 0;
-
-  @media (max-width: 820px) {
-    margin: 0 8px;
-    flex-direction: column;
-  }
-
-  @media (max-width: 480px) {
-    margin: 0 4px;
-  }
-`;
-
-const DoctorNameLink = styled(Link)`
-  text-decoration: none;
-  color: white !important;
-  background-color: transparent !important;
-  text-align: center;
-
-  @media (max-width: 820px) {
-    margin-bottom: 4px;
-    display: block;
-    width: 100%;
-  }
-
-  &:hover, &:active, &:visited {
-    color: white !important;
-    text-decoration: none;
-  }
-`;
-
-const DoctorNameText = styled(Typography)`
-  && {
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    text-align: center;
-    color: white !important;
-    background-color: transparent !important;
-    margin: 0;
-    line-height: 1.2;
-
-    @media (max-width: 820px) {
-      font-size: 0.9rem;
-      letter-spacing: 0.3px;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 0.8rem;
-      letter-spacing: 0.2px;
-    }
-  }
-`;
-
-const ContactInfo = styled(Typography)`
-  && {
-    color: white;
-    font-size: 0.8rem;
-    text-align: center;
-    line-height: 1.2;
-    margin-left: 16px;
-    
-    @media (max-width: 820px) {
-      font-size: 0.75rem;
-      margin-left: 0;
-      width: 100%;
-    }
-    
-    @media (max-width: 480px) {
-      font-size: 0.7rem;
-    }
-  }
-`;
-
-const MenuButton = styled(IconButton)`
-  && {
-    margin-right: 16px;
-    padding: 8px;
-    color: white;
-    
-    @media (max-width: 820px) {
-      margin-right: 12px;
-      padding: 6px;
-    }
-    
-    @media (max-width: 480px) {
-      margin-right: 8px;
-      padding: 4px;
-    }
-  }
-`;
-
-const DesktopNav = styled.div`
-  display: flex;
-  align-items: center;
-
-  @media (max-width: 820px) {
-    display: none;
-  }
-`;
-
 const MobileNavLink = styled(Link)`
   && {
     color: white !important;
@@ -212,7 +217,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <StyledAppBar position="static">
-        <Container>
+        <Container maxWidth="lg">
           <StyledToolbar>
             {isMobile && (
               <MenuButton
@@ -246,9 +251,9 @@ const Header = () => {
                   Dr. José Milton Gomes
                 </DoctorNameText>
               </DoctorNameLink>
-              <ContactInfo>
-                CRP xx.xxx | (016)99155-3901
-              </ContactInfo>
+              <Typography variant="body2" color="inherit">
+                CRP 13.060 | (016)99155-3901
+              </Typography>
             </HeaderContent>
           </StyledToolbar>
         </Container>

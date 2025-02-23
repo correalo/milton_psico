@@ -1,7 +1,8 @@
 import express, { Request, Response } from 'express';
 import { config } from 'dotenv';
 import cors from 'cors';
-import { Pool } from 'pg';
+import pkg from 'pg';
+const { Pool } = pkg;
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -47,10 +48,10 @@ app.post('/api/contact', async (req: Request, res: Response) => {
 });
 
 // Serve React app for all other routes
-app.get('*', (_req: Request, res: Response) => {
+app.get('*', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });

@@ -11,7 +11,8 @@ import Contact from './pages/Contact';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#2c3e50',
+      main: '#0d1b3e',
+      dark: '#122a5c',
     },
     secondary: {
       main: '#3498db',
@@ -19,6 +20,18 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        contained: {
+          backgroundColor: '#0d1b3e',
+          '&:hover': {
+            backgroundColor: '#122a5c',
+          },
+        },
+      },
+    },
   },
 });
 

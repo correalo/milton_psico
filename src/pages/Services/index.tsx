@@ -1,11 +1,14 @@
 import React from 'react';
 import { Container, Typography, Box, Card, CardContent, Grid } from '@mui/material';
 import styled from 'styled-components';
+import SocialIcons from '../../components/SocialIcons';
+import WhatsAppButton from '../../components/WhatsAppButton';
 
-const StyledSection = styled.section`
+const StyledSection = styled('section')`
+  padding: 40px 0;
+  background-color: #0d1b3e;
+  color: white;
   min-height: calc(100vh - 64px);
-  background-color: black;
-  padding: 20px;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -76,11 +79,20 @@ const Services = () => {
             Horário de Atendimento
           </Typography>
           <Typography variant="body1">
-            Segunda a Sexta: 8h às 18h
+            Segunda a Domingo: 7h às 11h
           </Typography>
           <Typography variant="body1">
-            Sábado: 8h às 12h
+            Presencial ou Online
           </Typography>
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 3 }}>
+          <Typography variant="body1">
+            Agende sua consulta: (016) 99155-3901
+          </Typography>
+          <WhatsAppButton phoneNumber="16991553901" />
+        </Box>
+        <Box my={4} textAlign="center">
+          <SocialIcons />
         </Box>
       </Container>
     </StyledSection>

@@ -34,9 +34,8 @@ code {
   box-sizing: border-box;
 }
 
-/* Remove todos os fundos azuis */
-.MuiButton-root,
-.MuiButtonBase-root,
+/* Remove todos os fundos azuis exceto botões de formulário */
+.MuiButtonBase-root:not([type="submit"]),
 a[class*="sc-"],
 [class*="sc-"] a,
 .MuiLink-root,
@@ -52,6 +51,15 @@ header a {
 
 header a:hover {
   background-color: rgba(255,255,255,0.1) !important;
+}
+
+/* Força botão de enviar a ter fundo azul escuro */
+button[type="submit"].MuiButton-contained {
+  background-color: #0d1b3e !important;
+}
+
+button[type="submit"].MuiButton-contained:hover {
+  background-color: #122a5c !important;
 }
 
 .sc-dVupuq:not(.MuiAppBar-root), 

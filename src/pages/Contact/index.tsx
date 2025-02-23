@@ -2,10 +2,14 @@ import React from 'react';
 import { Container, Typography, Box, Grid } from '@mui/material';
 import ContactForm from '../../components/ContactForm';
 import styled from 'styled-components';
+import SocialIcons from '../../components/SocialIcons';
+import WhatsAppButton from '../../components/WhatsAppButton';
 
-const StyledSection = styled.section`
+const StyledSection = styled('section')`
   padding: 40px 0;
-  background-color: black;
+  background-color: #0d1b3e;
+  color: white;
+  min-height: calc(100vh - 64px);
   width: 100vw;
   position: relative;
   left: 50%;
@@ -23,7 +27,7 @@ const StyledTextField = styled.input`
 `;
 
 const StyledButton = styled.button`
-  background-color: #666;
+  background-color: #0d1b3e;
   color: white;
   padding: 12px 30px;
   font-size: 1rem;
@@ -31,13 +35,15 @@ const StyledButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
   
   &:hover {
-    background-color: #555;
+    background-color: #122a5c;
   }
 `;
 
-const Contact = () => {
+const Contact: React.FC = () => {
   return (
     <StyledSection>
       <Container>
@@ -57,26 +63,21 @@ const Contact = () => {
                 Informações de Contato
               </Typography>
               <Typography variant="body1" paragraph>
-                Telefone/WhatsApp: (016)99155-3901
+                CRP: 13.060
               </Typography>
               <Typography variant="body1" paragraph>
-                CRP: xx.xxx
+                Horário de Atendimento:
+                <br />
+                Segunda a Domingo: 7h às 11h
+                <br />
+                Presencial ou Online
               </Typography>
-              <Typography variant="body1" paragraph>
-                Localização: Ribeirão Preto - SP
-              </Typography>
-            </Box>
-
-            <Box mb={4}>
-              <Typography variant="h6" gutterBottom>
-                Horário de Atendimento
-              </Typography>
-              <Typography variant="body1">
-                Segunda a Sexta: 8h às 18h
-              </Typography>
-              <Typography variant="body1">
-                Sábado: 8h às 12h
-              </Typography>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <Typography variant="body1">
+                  Telefone: (016) 99155-3901
+                </Typography>
+                <WhatsAppButton phoneNumber="16991553901" />
+              </Box>
             </Box>
           </Grid>
 
@@ -85,6 +86,9 @@ const Contact = () => {
               textFieldStyle={StyledTextField}
               buttonStyle={StyledButton}
             />
+            <Box my={4} textAlign="center">
+              <SocialIcons />
+            </Box>
           </Grid>
         </Grid>
       </Container>
